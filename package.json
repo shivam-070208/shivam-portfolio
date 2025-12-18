@@ -3,18 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bun run --bun next dev",
-    "build": "bun run --bun next build",
-    "start": "bun run --bunb next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@radix-ui/react-navigation-menu": "^1.2.14",
     "@wix/data": "^1.0.358",
     "@wix/sdk": "^1.17.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
+    "motion": "^12.23.26",
     "next": "16.0.10",
+    "next-themes": "^0.4.6",
     "react": "19.2.1",
     "react-dom": "19.2.1",
     "tailwind-merge": "^3.4.0"
