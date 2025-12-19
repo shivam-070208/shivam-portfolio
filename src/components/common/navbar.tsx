@@ -13,6 +13,7 @@ import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import ThemeToggle from "./toggle-themes";
+import GlassSurface from "../ui/glass-surface";
 
 const NabLinks = [
   {
@@ -44,7 +45,7 @@ const NavBar = () => {
     <Container
       maxWidth="2xl"
       className={cn(
-        "h-fit mt-6 sticky top-6 p-0 transition-all",
+        "h-fit mt-6 sticky top-6 p-0 z-99 transition-all",
         isScrolled && "top-10"
       )}
     >
@@ -53,7 +54,7 @@ const NavBar = () => {
           borderRadius: isScrolled ? ["0px", "100px", "9999px"] : "0px",
           width: isScrolled ? "90%" : "100%",
           borderWidth: isScrolled ? ["0.4px", "1px"] : "0px",
-          y:[-100,0]
+          y: [-100, 0],
         }}
         transition={{
           borderRadius: {
@@ -62,9 +63,11 @@ const NavBar = () => {
           },
         }}
         className={cn(
-          "bg-transparent backdrop-blur-[2px]  transition-all  p-2  mx-auto"
+          "bg-transparent transition-all relative  p-2 mx-auto",
+          "[backdrop-filter:url('#displacementFilter')]"
         )}
       >
+        <GlassSurface />
         <NavigationMenu viewport={false} className="justify-between">
             <NavigationMenuLogo>
             <NavigationMenuLink  asChild>

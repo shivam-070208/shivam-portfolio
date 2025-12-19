@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@radix-ui/react-navigation-menu": "^1.2.14",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-tooltip": "^1.2.8",
     "@wix/data": "^1.0.358",
     "@wix/sdk": "^1.17.8",
     "class-variance-authority": "^0.7.1",
