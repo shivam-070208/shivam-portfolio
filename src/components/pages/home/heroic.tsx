@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { File, Send } from "lucide-react";
+import SocialIconStack from "@/components/common/social-icon-stack";
 
 const Heroic = () => {
   return (
@@ -19,7 +20,7 @@ const Heroic = () => {
           >
             Shivam Gupta
           </Heading>
-          <SubHeading size="md" className="text-neutral-400 mt-3">
+          <SubHeading size="md" className=" mt-3">
             Passionate Full Stack Developer focused on delivering <br />
             high-performance, scalable applications, with a strong emphasis on
             clean code.
@@ -30,30 +31,30 @@ const Heroic = () => {
         </Avatar>
       </Container>
       <Container className="mt-6 space-x-3">
-        <Button asChild
-          className={cn("bg-linear-to-br from-blue-500 to-blue-800",
+        <Button
+          asChild
+          className={cn(
+            "bg-linear-to-br from-blue-400 to-blue-800",
             "text-white group relative ",
             "shadow-md shadow-neutral-600 dark:shadow-neutral-700"
           )}
         >
-          <Link href={"/contact"} >
-          <Send className="transition-all absolute left-2 group-hover:left-22" />
-          <p className="ml-4 transition-all group-hover:mr-4 group-hover:ml-0">
-          Contact Me
-          </p>
+          <Link href={"/contact"}>
+            <Send className="transition-all absolute left-2 group-hover:left-22" />
+            <p className="ml-4 transition-all group-hover:mr-4 group-hover:ml-0">
+              Contact Me
+            </p>
           </Link>
         </Button>
-        <Button asChild
-        variant={"outline"}
-          className="relative group"
->
-          <Link href={"#"} target="_blank" >
-          <File className="transition-all absolute left-2 group-hover:left-22" />
-          <p className="ml-4 transition-all group-hover:mr-4 group-hover:ml-0">
-         My Resume
-          </p>
+        <Button asChild variant={"outline"} className="relative group ">
+          <Link href={"#"} target="_blank">
+            <File className="transition-all absolute left-2 group-hover:left-22" />
+            <p className="ml-4 transition-all group-hover:mr-4 group-hover:ml-0">
+              My Resume
+            </p>
           </Link>
         </Button>
+        <SocialIconStack />
       </Container>
     </div>
   );

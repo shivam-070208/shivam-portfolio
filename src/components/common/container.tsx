@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "full";
   as?: React.ElementType;
 }

@@ -59,7 +59,7 @@ const SubHeading = React.forwardRef<HTMLElement, SubHeadingProps>(
           sizeMap[size],
           weight && weightMap[weight],
           align && alignMap[align],
-          "tracking-tight leading-tight max-w-sm",
+          "tracking-tight leading-tight max-w-sm text-muted-foreground",
           className
         )}
         ref={ref as any}

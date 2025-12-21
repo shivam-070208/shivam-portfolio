@@ -12,8 +12,8 @@ import Link from "next/link";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import ThemeToggle from "./toggle-themes";
 import GlassSurface from "../ui/glass-surface";
+import ThemeToggle from "./toggle-themes";
 
 const NabLinks = [
   {
@@ -34,11 +34,11 @@ const NabLinks = [
   },
 ];
 const NavBar = () => {
-  const { scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
-  useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    if (progress > 0.1) setIsScrolled(true);
+  useMotionValueEvent(scrollY, "change", (progress) => {
+    if (progress > 70) setIsScrolled(true);
     else setIsScrolled(false);
   });
   return (
@@ -50,21 +50,22 @@ const NavBar = () => {
       )}
     >
       <motion.div
-        animate={{
-          borderRadius: isScrolled ? ["0px", "100px", "9999px"] : "0px",
+      initial={{
+        y:-100
+      }}
+          animate={{
+          borderRadius: isScrolled ?["0px","100px","999px"]:"0px",
           width: isScrolled ? "90%" : "100%",
           borderWidth: isScrolled ? ["0.4px", "1px"] : "0px",
-          y: [-100, 0],
+          y: 0,
         }}
         transition={{
-          borderRadius: {
-            duration: 0.4,
-            ease: "linear",
-          },
+          duration:0.7,
+          ease:"backInOut"
         }}
         className={cn(
-          "bg-transparent transition-all relative  p-2 mx-auto",
-          "[backdrop-filter:url('#displacementFilter')]"
+          "bg-transparent  relative p-2 mx-auto overflow-hidden",
+          isScrolled&&"[backdrop-filter:url('#displacementFilter')]"
         )}
       >
         <GlassSurface />
