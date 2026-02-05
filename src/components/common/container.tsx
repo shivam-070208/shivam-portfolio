@@ -26,7 +26,7 @@ const Container: React.FC<ContainerProps> = ({
   return (
     <Component
       className={cn(
-        "w-full  mx-auto px-4",
+        "w-full  mx-auto px-2",
         maxWidthMap[maxWidth],
         className
       )}

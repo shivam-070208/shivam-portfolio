@@ -11,7 +11,7 @@ import SocialIconStack from "@/components/common/social-icon-stack";
 
 const Heroic = () => {
   return (
-    <div className="mt-14">
+    <section className="mt-14">
       <Container className="flex justify-between gap-2 flex-wrap-reverse">
         <div>
           <Heading
@@ -56,7 +56,7 @@ const Heroic = () => {
         </Button>
         <SocialIconStack />
       </Container>
-    </div>
+    </section>
   );
 };
 

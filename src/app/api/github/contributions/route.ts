@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
-
+const username = "shivam-070208";
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 export async function GET() {
   try {
-    const username = "shivam-070208";
-    
-    if (process.env.GITHUB_TOKEN) {
+    if (GITHUB_TOKEN) {
       const toDate = new Date();
       const fromDate = new Date();
       fromDate.setFullYear(fromDate.getFullYear() - 1);
@@ -38,7 +37,7 @@ export async function GET() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
         },
         body: JSON.stringify({ query, variables }),
         next: { revalidate: 3600 }, 
@@ -54,6 +53,14 @@ export async function GET() {
           });
         }
       }
+    return NextResponse.json(
+      {
+        totalContributions: 0,
+        weeks: [],
+        error: await response.text(),
+      },
+      { status: response.status }
+    );
     }
 
 

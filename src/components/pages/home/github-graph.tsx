@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { LoaderIcon } from "lucide-react";
+import {  LoaderIcon } from "lucide-react";
 import { githubUrl } from "@/config/constants";
 import {
   SectionContainer,
@@ -86,7 +86,12 @@ const GitHubGraph = () => {
         title="Github Contribution"
         description={`Total ${totalContributions} in past 365 days.`}
       >
-        <Link href={githubUrl} target="_blank">view on github</Link>
+        <Link href={githubUrl} className="text-sm inline-flex justify-center items-center gap-1" target="_blank" rel="noopener noreferrer">
+          view on github
+          <svg xmlns="http://www.w3.org/2000/svg" className="inline w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 7l-10 10M17 17V7h-10" />
+          </svg>
+        </Link>
       </SectionHeader>
       <SectionContent>
         {loading ? (
@@ -94,8 +99,8 @@ const GitHubGraph = () => {
             <LoaderIcon className="animate-spin" />
           </div>
         ) : data?.error ? (
-          <div className="rounded-lg border border-dashed border-neutral-300 dark:border-neutral-700 p-8 text-center">
-            <p className="text-neutral-400 text-sm">
+          <div className="rounded-lg border-dashed border p-8 text-center">
+            <p className="text-muted-foreground text-sm">
               {data.error.includes("GITHUB_TOKEN")
                 ? "GitHub API requires authentication. Add GITHUB_TOKEN to your environment variables."
                 : "Unable to load contribution data. Please try again later."}
@@ -112,7 +117,7 @@ const GitHubGraph = () => {
                   }
                 }}
               >
-                <div className="flex gap-1 min-w-max">
+                <div className="flex gap-1 min-w-max p-1">
                   {displayWeeks.map((week, weekIndex) => (
                     <div key={weekIndex} className="flex flex-col gap-1">
                       {week.contributionDays.map((day, dayIndex) => (

@@ -1,6 +1,5 @@
 import {  items } from '@wix/data';
-import { createClient, OAuthStrategy, WixClient } from '@wix/sdk';
-
+import { createClient, OAuthStrategy } from '@wix/sdk';
 const clientId = process.env.WIX_CLIENT_ID;
 if (!clientId) throw new Error("Missing WIX_CLIENT_ID");
 
@@ -10,13 +9,13 @@ const wixClient = createClient({
 });
 
 
-const blogs = wixClient.items.query("TechnicalBlogs");
+const blogsQuery = wixClient.items.query("TechnicalBlogs");
 
-const projects = wixClient.items.query("Projects");
+const projectsQuery = wixClient.items.query("Projects");
 
 
 export {
     wixClient,
-    blogs,
-    projects
+    blogsQuery,
+    projectsQuery
 }

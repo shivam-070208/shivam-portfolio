@@ -1,6 +1,6 @@
 import { linkedinUrl, xUrl, eMail, githubUrl } from "@/config/constants";
 import Avatar from "@/components/ui/avatar";
-import { IconsMap } from "@/lib/iconMap";
+import { IconsMap } from "@/lib/icon-map";
 import Link from "next/link";
 import { mailtoUrl } from "@/lib/utils";
 
