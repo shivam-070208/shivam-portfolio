@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import {  LoaderIcon } from "lucide-react";
+import { LoaderIcon } from "lucide-react";
 import { githubUrl } from "@/config/constants";
 import {
   SectionContainer,
@@ -62,13 +62,13 @@ const GitHubGraph = () => {
       case count === 0:
         return "border"; // no contributions
       case count <= 2:
-        return "border bg-green-100/60 opacity-40"; // low
+        return "border bg-green-300/80 ";
       case count <= 4:
-        return "border bg-green-200/60"; // medium-low
+        return "border bg-green-400/90";
       case count <= 6:
-        return "border bg-green-400/60"; // medium-high
+        return "border bg-green-500/95";
       default:
-        return "border bg-green-600/60"; // high
+        return "border bg-green-600/100";
     }
   };
 
@@ -84,12 +84,25 @@ const GitHubGraph = () => {
     <SectionContainer>
       <SectionHeader
         title="Github Contribution"
-        description={`Total ${totalContributions} in past 365 days.`}
-      >
-        <Link href={githubUrl} className="text-sm inline-flex justify-center items-center gap-1" target="_blank" rel="noopener noreferrer">
+        description={`Total ${totalContributions} in past 365 days.`}>
+        <Link
+          href={githubUrl}
+          className="inline-flex items-center justify-center gap-1 text-sm"
+          target="_blank"
+          rel="noopener noreferrer">
           view on github
-          <svg xmlns="http://www.w3.org/2000/svg" className="inline w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 7l-10 10M17 17V7h-10" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="inline h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17 7l-10 10M17 17V7h-10"
+            />
           </svg>
         </Link>
       </SectionHeader>
@@ -99,7 +112,7 @@ const GitHubGraph = () => {
             <LoaderIcon className="animate-spin" />
           </div>
         ) : data?.error ? (
-          <div className="rounded-lg border-dashed border p-8 text-center">
+          <div className="rounded-lg border border-dashed p-8 text-center">
             <p className="text-muted-foreground text-sm">
               {data.error.includes("GITHUB_TOKEN")
                 ? "GitHub API requires authentication. Add GITHUB_TOKEN to your environment variables."
@@ -110,22 +123,21 @@ const GitHubGraph = () => {
           <div className="relative">
             <div className={cn("rounded-lg p-6", "border-2")}>
               <div
-                className="overflow-x-auto pb-4 -mx-2 px-2 scrollbar-hide"
+                className="scrollbar-hide -mx-2 overflow-x-auto px-2 pb-4"
                 ref={(el) => {
                   if (el) {
                     el.scrollLeft = el.scrollWidth;
                   }
-                }}
-              >
-                <div className="flex gap-1 min-w-max p-1">
+                }}>
+                <div className="flex min-w-max gap-1 p-1">
                   {displayWeeks.map((week, weekIndex) => (
                     <div key={weekIndex} className="flex flex-col gap-1">
                       {week.contributionDays.map((day, dayIndex) => (
                         <div
                           key={`${weekIndex}-${dayIndex}`}
                           className={cn(
-                            "w-3 h-3 rounded-sm transition-all duration-200",
-                            "hover:scale-110 hover:ring-2 hover:ring-emerald-400/50 cursor-pointer",
+                            "h-3 w-3 rounded-sm transition-all duration-200",
+                            "cursor-pointer hover:scale-110 hover:ring-2 hover:ring-emerald-400/50",
                             getIntensityColor(day.contributionCount)
                           )}
                           title={`${day.contributionCount} contribution${
@@ -146,23 +158,23 @@ const GitHubGraph = () => {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between mt-4 text-xs text-neutral-400">
+              <div className="mt-4 flex items-center justify-between text-xs text-neutral-400">
                 <span>Less</span>
-                <div className="flex gap-1 items-center">
+                <div className="flex items-center gap-1">
                   <div
-                    className={cn("w-3 h-3 rounded-sm", getIntensityColor(0))}
+                    className={cn("h-3 w-3 rounded-sm", getIntensityColor(0))}
                   />
                   <div
-                    className={cn("w-3 h-3 rounded-sm", getIntensityColor(2))}
+                    className={cn("h-3 w-3 rounded-sm", getIntensityColor(2))}
                   />
                   <div
-                    className={cn("w-3 h-3 rounded-sm", getIntensityColor(4))}
+                    className={cn("h-3 w-3 rounded-sm", getIntensityColor(4))}
                   />
                   <div
-                    className={cn("w-3 h-3 rounded-sm", getIntensityColor(6))}
+                    className={cn("h-3 w-3 rounded-sm", getIntensityColor(6))}
                   />
                   <div
-                    className={cn("w-3 h-3 rounded-sm", getIntensityColor(8))}
+                    className={cn("h-3 w-3 rounded-sm", getIntensityColor(8))}
                   />
                 </div>
                 <span>More</span>
