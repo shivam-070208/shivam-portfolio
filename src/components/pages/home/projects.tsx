@@ -5,7 +5,7 @@ import {
   SectionHeader,
 } from "@/components/common/section-layout";
 import { projectsQuery } from "@/lib/wix-client";
-import { ProjectType } from "@/types/project";
+import { Project } from "@/types/project";
 const Projects = async () => {
   const { items: allProjects } = await projectsQuery.find();
 
@@ -19,7 +19,7 @@ const Projects = async () => {
         <div className="grid grid-cols-2 gap-2">
           {allProjects.length === 0 && <div>No projects found.</div>}
           {allProjects.map((project) => (
-            <ProjectCard project={project as ProjectType} key={project._id} />
+            <ProjectCard project={project as Project} key={project._id} />
           ))}
         </div>
       </SectionContent>

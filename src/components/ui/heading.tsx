@@ -61,12 +61,11 @@ const Heading = React.forwardRef<HTMLElement, HeadingProps>(
           sizeMap[size],
           weight && weightMap[weight],
           align && alignMap[align],
-          "tracking-tight text-foreground",
+          "text-foreground tracking-tight",
           className
         )}
-        ref={ref as any}
-        {...props}
-      >
+        ref={ref as React.Ref<HTMLHeadingElement>}
+        {...props}>
         {children}
       </Tag>
     );

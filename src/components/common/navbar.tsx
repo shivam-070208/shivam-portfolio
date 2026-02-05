@@ -45,33 +45,31 @@ const NavBar = () => {
     <Container
       maxWidth="2xl"
       className={cn(
-        "h-fit mt-6 sticky top-6 p-0 z-99 transition-all",
+        "sticky top-6 z-99 mt-6 h-fit p-0 transition-all",
         isScrolled && "top-10"
-      )}
-    >
+      )}>
       <motion.div
-      initial={{
-        y:-100
-      }}
-          animate={{
-          borderRadius: isScrolled ?["0px","100px","999px"]:"0px",
+        initial={{
+          y: -100,
+        }}
+        animate={{
+          borderRadius: isScrolled ? ["0px", "100px", "999px"] : "0px",
           width: isScrolled ? "90%" : "100%",
           borderWidth: isScrolled ? ["0.4px", "1px"] : "0px",
           y: 0,
         }}
         transition={{
-          duration:0.7,
-          ease:"backInOut"
+          duration: 0.7,
+          ease: "backInOut",
         }}
         className={cn(
-          "bg-transparent  relative p-2 mx-auto overflow-hidden",
-          isScrolled&&"[backdrop-filter:url('#displacementFilter')]"
-        )}
-      >
+          "relative mx-auto overflow-hidden bg-transparent p-2",
+          isScrolled && "[backdrop-filter:url('#displacementFilter')]"
+        )}>
         <GlassSurface />
         <NavigationMenu viewport={false} className="justify-between">
-            <NavigationMenuLogo>
-            <NavigationMenuLink  asChild>
+          <NavigationMenuLogo>
+            <NavigationMenuLink asChild>
               <Link href={"/"}>
                 <Image
                   src={"/logo.png"}
@@ -83,11 +81,11 @@ const NavBar = () => {
               </Link>
             </NavigationMenuLink>
           </NavigationMenuLogo>
-              <NavigationMenuList>
+          <NavigationMenuList>
             {NabLinks.map((link, index) => (
               <NavigationMenuItem key={index}>
-                <NavigationMenuLink  asChild >
-                    <Link href={link.href}>{link.name}</Link>
+                <NavigationMenuLink asChild>
+                  <Link href={link.href}>{link.name}</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}

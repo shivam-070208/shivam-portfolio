@@ -1,4 +1,4 @@
-import { ProjectType } from "@/types/project";
+import type { Project } from "@/types/project";
 import {
   Card,
   CardDescription,
@@ -20,6 +20,7 @@ import {
   FaVuejs,
   FaJava,
   FaDocker,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -90,7 +91,7 @@ const GradientClassesMap: string[] = [
   "bg-linear-to-bl from-teal-400 via-cyan-500 to-blue-500",
 ];
 
-const ProjectCard = ({ project }: { project: ProjectType }) => {
+const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <Card className="pt-0!">
       <div
@@ -112,7 +113,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
           {project.description}
         </CardDescription>
       </CardHeader>
-      <CardFooter className="flex justify-between">
+      <CardFooter className="flex items-center justify-between">
         <div className="flex">
           {project.tech.map((tech, idx) => {
             const Icon = TechNologyIconMap[tech]?.icon;
@@ -133,6 +134,29 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
               </Avatar>
             );
           })}
+        </div>
+        {/* Links section */}
+        <div className="flex items-center gap-2">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub repository"
+              className="transition-colors hover:text-black dark:hover:text-white">
+              <FaGithub size={20} />
+            </a>
+          )}
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Live site"
+              className="transition-colors hover:text-blue-700 dark:hover:text-blue-400">
+              <FaExternalLinkAlt size={18} />
+            </a>
+          )}
         </div>
       </CardFooter>
     </Card>
