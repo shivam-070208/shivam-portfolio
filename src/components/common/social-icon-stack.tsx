@@ -1,35 +1,45 @@
-import { linkedinUrl, xUrl, eMail, githubUrl } from "@/config/constants";
+import {
+  linkedinUrl,
+  xUrl,
+  eMail,
+  githubUrl,
+  codolioUrl,
+} from "@/config/constants";
 import Avatar from "@/components/ui/avatar";
 import { IconsMap } from "@/lib/icon-map";
 import Link from "next/link";
 import { mailtoUrl } from "@/lib/utils";
 
-const SocialData = [
+interface SocialDataType {
+  name: keyof typeof IconsMap;
+  href: string;
+}
+const SocialData: Array<SocialDataType> = [
   {
     name: "X",
     href: xUrl,
-    iconKey: "x",
   },
   {
     name: "Linkedin",
     href: linkedinUrl,
-    iconKey: "linkedin",
   },
   {
     name: "Github",
     href: githubUrl,
-    iconKey: "github",
   },
   {
     name: "Email",
     href: mailtoUrl(eMail),
-    iconKey: "mail",
+  },
+  {
+    name: "Codolio",
+    href: codolioUrl,
   },
 ];
 
 const SocialIconStack = () => {
   return (
-    <div className="flex gap-1 mt-4">
+    <div className="mt-4 flex gap-1">
       {SocialData.map((social) => {
         const IconComponent = IconsMap[social.name];
         return (
@@ -37,14 +47,12 @@ const SocialIconStack = () => {
             href={social.href}
             key={social.name}
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             <Avatar
               tooltip
               tooltipTitle={social.name}
-              className="p-2 rounded-md border"
-            >
-              {IconComponent && <IconComponent  size={24} />}
+              className="rounded-md border p-2">
+              {IconComponent && <IconComponent size={24} />}
             </Avatar>
           </Link>
         );
@@ -53,4 +61,4 @@ const SocialIconStack = () => {
   );
 };
 
-export default SocialIconStack;
+export { SocialIconStack };

@@ -7,20 +7,19 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { File, Send } from "lucide-react";
-import SocialIconStack from "@/components/common/social-icon-stack";
+import { SocialIconStack } from "@/components/common/social-icon-stack";
 
 const Heroic = () => {
   return (
     <section className="mt-14">
-      <Container className="flex justify-between gap-2 flex-wrap-reverse">
+      <Container className="flex flex-wrap-reverse justify-between gap-2">
         <div>
           <Heading
             size="4xl"
-            className="text-shadow-xs  text-shadow-neutral-600 dark:text-neutral-300"
-          >
+            className="text-shadow-neutral-600 text-shadow-xs dark:text-neutral-300">
             Shivam Gupta
           </Heading>
-          <SubHeading size="md" className=" mt-3">
+          <SubHeading size="md" className="mt-3">
             Passionate Full Stack Developer focused on delivering <br />
             high-performance, scalable applications, with a strong emphasis on
             clean code.
@@ -35,20 +34,19 @@ const Heroic = () => {
           asChild
           className={cn(
             "bg-linear-to-br from-blue-400 to-blue-800",
-            "text-white group relative ",
+            "group relative text-white",
             "shadow-md shadow-neutral-600 dark:shadow-neutral-700"
-          )}
-        >
+          )}>
           <Link href={"/contact"}>
-            <Send className="transition-all absolute left-2 group-hover:left-22" />
+            <Send className="absolute left-2 transition-all group-hover:left-22" />
             <p className="ml-4 transition-all group-hover:mr-4 group-hover:ml-0">
               Contact Me
             </p>
           </Link>
         </Button>
-        <Button asChild variant={"outline"} className="relative group ">
+        <Button asChild variant={"outline"} className="group relative">
           <Link href={"#"} target="_blank">
-            <File className="transition-all absolute left-2 group-hover:left-22" />
+            <File className="absolute left-2 transition-all group-hover:left-22" />
             <p className="ml-4 transition-all group-hover:mr-4 group-hover:ml-0">
               My Resume
             </p>

@@ -45,6 +45,7 @@ import {
   SiThreedotjs,
 } from "react-icons/si";
 import Avatar from "../ui/avatar";
+import Link from "next/link";
 
 const TechNologyIconMap: Record<
   string,
@@ -128,34 +129,33 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     color={TechNologyIconMap[tech]?.color}
                   />
                 )}
-                <span className="ml-0 max-w-0 text-xs whitespace-nowrap opacity-0 transition-[max-width,opacity,margin] duration-300 group-hover:mr-2 group-hover:ml-2 group-hover:max-w-xs group-hover:opacity-100">
+                <span className="ml-0 max-w-0 text-xs whitespace-nowrap opacity-0 transition-[max-width,opacity,margin] duration-300 group-hover:mx-2 group-hover:max-w-xs group-hover:opacity-100">
                   {tech.charAt(0).toUpperCase() + tech.slice(1)}
                 </span>
               </Avatar>
             );
           })}
         </div>
-        {/* Links section */}
         <div className="flex items-center gap-2">
           {project.github && (
-            <a
+            <Link
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub repository"
               className="transition-colors hover:text-black dark:hover:text-white">
               <FaGithub size={20} />
-            </a>
+            </Link>
           )}
           {project.live && (
-            <a
+            <Link
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Live site"
               className="transition-colors hover:text-blue-700 dark:hover:text-blue-400">
               <FaExternalLinkAlt size={18} />
-            </a>
+            </Link>
           )}
         </div>
       </CardFooter>

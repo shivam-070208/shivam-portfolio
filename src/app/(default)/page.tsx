@@ -3,6 +3,7 @@ import GitHubGraph from "@/components/pages/home/github-graph";
 import Projects from "@/components/pages/home/projects";
 import Container from "@/components/common/container";
 import Experience from "@/components/pages/home/experience";
+import About from "@/components/pages/home/about";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <GitHubGraph />
       <Projects />
       <Experience />
+      <About />
     </Container>
   );
 }

@@ -122,23 +122,27 @@
   body {
     @apply bg-background text-foreground;
   }
+  body,
+  html {
+    @apply scroll-smooth;
+  }
   .blur-in {
-    @apply blur-xl opacity-50;
+    @apply opacity-50 blur-xl;
     animation: blurIn 0.4s 1.5s ease forwards;
   }
 }
-.scrollbar-hide{
- scrollbar-width: none;
- -ms-overflow-style: none;
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-@keyframes blurIn{
-  0%{
-    opacity:0.5;
-    filter:blur(24px);
+@keyframes blurIn {
+  0% {
+    opacity: 0.5;
+    filter: blur(24px);
   }
-  100%{
-    opacity:1;
-    filter:blur(0);
+  100% {
+    opacity: 1;
+    filter: blur(0);
   }
 }

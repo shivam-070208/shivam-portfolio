@@ -85,7 +85,9 @@ const NavBar = () => {
             {NabLinks.map((link, index) => (
               <NavigationMenuItem key={index}>
                 <NavigationMenuLink asChild>
-                  <Link href={link.href}>{link.name}</Link>
+                  <Link href={link.href} prefetch>
+                    {link.name}
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
