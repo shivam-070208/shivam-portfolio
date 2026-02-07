@@ -39,7 +39,31 @@ export const metadata: Metadata = {
     "Open Source",
   ],
   openGraph: {
-    images: ["/logo.png"],
+    type: "website",
+    locale: "en_US",
+    url: "https://bitsketcher.com",
+    siteName: "Bitsketcher",
+    title: "Bitsketcher - Portfolio of Shivam Gupta",
+    description:
+      "Portfolio of Shivam Gupta – developer, creator, and tech enthusiast. Showcasing projects, experience, blogs, and contact information.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Bitsketcher Logo",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bitsketcher",
+    creator: "@bitsketcher",
+    title: "Bitsketcher - Portfolio of Shivam Gupta",
+    description:
+      "Portfolio of Shivam Gupta – developer, creator, and tech enthusiast. Showcasing projects, experience, blogs, and contact information.",
+    images: ["/og.png"],
   },
 };
 

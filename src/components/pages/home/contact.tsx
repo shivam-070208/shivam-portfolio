@@ -1,7 +1,7 @@
 "use client";
+import { contactFormSubmit } from "@/app/actions/contact-form-submit";
 import {
   SectionContainer,
-  SectionHeader,
   SectionContent,
 } from "@/components/common/section-layout";
 
@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 const Contact = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -22,8 +23,14 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    await contactFormSubmit({
+      name,
+      email,
+      message,
+    });
     setSubmitted(true);
+
+    setName("");
     setEmail("");
     setMessage("");
     setLoading(false);
@@ -43,6 +50,14 @@ const Contact = () => {
         <form
           className="flex w-full max-w-md flex-col gap-4"
           onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            placeholder="Your Name"
+            className="oiutline-none border-dashed"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
           <Input
             type="email"
             placeholder="Your Email"
