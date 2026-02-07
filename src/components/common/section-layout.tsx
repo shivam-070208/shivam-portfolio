@@ -11,7 +11,7 @@ const SectionContainer = ({
 }: ContainerProps) => (
   <Container
     as={as}
-    className={cn("flex flex-col gap-2", className)}
+    className={cn("flex flex-col gap-2 border-b pb-2", className)}
     {...props}
   />
 );
@@ -30,15 +30,15 @@ const SectionHeader = ({
   className,
   children,
 }: SectionHeaderProps) => (
-  <div className={cn("flex items-center justify-between gap-4", className)}>
+  <div
+    className={cn(
+      "flex flex-wrap items-center justify-between gap-4",
+      className
+    )}>
     <div className="flex flex-col gap-1">
       <Heading as="h3">{title}</Heading>
       {description && (
-        <SubHeading
-          size="sm"
-          className="text-muted-foreground ml-2 "
-          as="p"
-        >
+        <SubHeading size="sm" className="text-muted-foreground ml-2" as="p">
           {description}
         </SubHeading>
       )}
@@ -53,10 +53,7 @@ interface SectionContentProps {
   className?: string;
 }
 
-const SectionContent = ({
-  children,
-  className,
-}: SectionContentProps) => (
+const SectionContent = ({ children, className }: SectionContentProps) => (
   <Container className={cn("p-2", className)}>{children}</Container>
 );
 

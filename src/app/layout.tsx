@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     "Next Generation Web",
     "Open Source",
   ],
+  openGraph: {
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({

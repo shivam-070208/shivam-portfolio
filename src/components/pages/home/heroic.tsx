@@ -37,7 +37,7 @@ const Heroic = () => {
             "group relative text-white",
             "shadow-md shadow-neutral-600 dark:shadow-neutral-700"
           )}>
-          <Link href={"/contact"}>
+          <Link href={"#contact"}>
             <Send className="absolute left-2 transition-all group-hover:left-22" />
             <p className="ml-4 transition-all group-hover:mr-4 group-hover:ml-0">
               Contact Me

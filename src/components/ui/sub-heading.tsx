@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-type SubHeadingLevels = "h2" | "h3" | "h4" | "p"|"div" | "span";
+type SubHeadingLevels = "h2" | "h3" | "h4" | "p" | "div" | "span";
 
-type Size = "xs"|"sm" | "md" | "lg" | "xl" | "2xl";
+type Size = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 
 const sizeMap: Record<Size, string> = {
-    xs: "text-xs",
+  xs: "text-xs",
   sm: "text-sm",
   md: "text-base",
   lg: "text-lg",
@@ -59,12 +59,11 @@ const SubHeading = React.forwardRef<HTMLElement, SubHeadingProps>(
           sizeMap[size],
           weight && weightMap[weight],
           align && alignMap[align],
-          "tracking-tight leading-tight max-w-sm text-muted-foreground",
+          "text-muted-foreground max-w-sm leading-tight tracking-tight",
           className
         )}
-        ref={ref as any}
-        {...props}
-      >
+        ref={ref as React.Ref<HTMLHeadingElement>}
+        {...props}>
         {children}
       </Tag>
     );
