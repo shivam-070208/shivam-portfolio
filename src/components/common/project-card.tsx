@@ -30,10 +30,7 @@ import {
   SiExpress,
   SiVercel,
   SiFirebase,
-  SiCplusplus,
   SiGo,
-  SiRuby,
-  SiRust,
   SiPostgresql,
   SiMysql,
   SiJest,
@@ -43,6 +40,8 @@ import {
   SiGraphql,
   SiPrisma,
   SiThreedotjs,
+  SiGnubash,
+  SiVite,
 } from "react-icons/si";
 import Avatar from "../ui/avatar";
 import Link from "next/link";
@@ -56,23 +55,15 @@ const TechNologyIconMap: Record<
   tailwind: { icon: SiTailwindcss, color: "#38BDF8" },
   tailwindcss: { icon: SiTailwindcss, color: "#38BDF8" },
   nodejs: { icon: FaNodeJs, color: "#339933" },
-  github: { icon: FaGithub, color: "#000" },
-  css: { icon: FaCss3Alt, color: "#1572B6" },
-  javascript: { icon: FaJsSquare, color: "#F7DF1E" },
   mongodb: { icon: SiMongodb, color: "#47A248" },
   redux: { icon: SiRedux, color: "#764ABC" },
   express: { icon: SiExpress, color: "#000" },
   vercel: { icon: SiVercel, color: "#000" },
   firebase: { icon: SiFirebase, color: "#FFCA28" },
-  cplusplus: { icon: SiCplusplus, color: "#00599C" },
   go: { icon: SiGo, color: "#00ADD8" },
-  ruby: { icon: SiRuby, color: "#CC342D" },
-  rust: { icon: SiRust, color: "#000" },
   postgresql: { icon: SiPostgresql, color: "#336791" },
   mysql: { icon: SiMysql, color: "#4479A1" },
   jest: { icon: SiJest, color: "#C21325" },
-  angular: { icon: FaAngular, color: "#DD0031" },
-  vue: { icon: FaVuejs, color: "#42b883" },
   sass: { icon: FaSass, color: "#CC6699" },
   dotnet: { icon: SiDotnet, color: "#512BD4" },
   django: { icon: SiDjango, color: "#092E20" },
@@ -82,6 +73,9 @@ const TechNologyIconMap: Record<
   docker: { icon: FaDocker, color: "#2496ED" },
   java: { icon: FaJava, color: "#007396" },
   react3fiber: { icon: SiThreedotjs, color: "#000" },
+  vite: { icon: SiVite, color: "#646CFF" },
+  glsl: { icon: SiGnubash, color: "#5E5FA6" }, // Substitute, since no GLSL icon in react-icons
+  threejs: { icon: SiThreedotjs, color: "#000" },
 };
 
 const GradientClassesMap: string[] = [
