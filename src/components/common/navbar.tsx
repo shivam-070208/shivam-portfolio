@@ -14,33 +14,36 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import GlassSurface from "../ui/glass-surface";
 import ThemeToggle from "./toggle-themes";
+import { usePathname } from "next/navigation";
+import { useMobile } from "@/hooks/use-mobile";
 
-const NabLinks = [
-  {
-    name: "Projects",
-    href: "#projects",
-  },
-  {
-    name: "About",
-    href: "#about",
-  },
-  {
-    name: "Contact",
-    href: "#contact",
-  },
-  {
-    name: "Blogs",
-    href: "/blogs",
-  },
-];
 const NavBar = () => {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/" || pathname === "";
+  const isMobile = useMobile();
+
+  let NavLinks = [];
+  if (isHome && !isMobile) {
+    NavLinks = [
+      { name: "Projects", href: "#projects" },
+      { name: "About", href: "#about" },
+      { name: "Contact", href: "#contact" },
+      { name: "Blogs", href: "/blogs" },
+    ];
+  } else {
+    NavLinks = [
+      { name: "Home", href: "/" },
+      { name: "Blogs", href: "/blogs" },
+    ];
+  }
 
   useMotionValueEvent(scrollY, "change", (progress) => {
     if (progress > 70) setIsScrolled(true);
     else setIsScrolled(false);
   });
+
   return (
     <Container
       maxWidth="2xl"
@@ -82,7 +85,7 @@ const NavBar = () => {
             </NavigationMenuLink>
           </NavigationMenuLogo>
           <NavigationMenuList>
-            {NabLinks.map((link, index) => (
+            {NavLinks.map((link, index) => (
               <NavigationMenuItem key={index}>
                 <NavigationMenuLink asChild>
                   <Link href={link.href} prefetch>

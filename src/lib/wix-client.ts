@@ -8,7 +8,7 @@ const wixClient = createClient({
   auth: OAuthStrategy({ clientId }),
 });
 
-const blogsQuery = wixClient.items.query("TechnicalBlogs");
+const blogsQuery = wixClient.items.query("Blogs");
 
 const projectsQuery = wixClient.items.query("Projects");
 
