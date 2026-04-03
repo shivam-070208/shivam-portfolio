@@ -15,7 +15,7 @@ const sizeMap: Record<Size, string> = {
 };
 
 export interface SubHeadingProps extends React.HTMLAttributes<HTMLElement> {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   as?: SubHeadingLevels;
   size?: Size;
   weight?: "light" | "normal" | "medium" | "semibold" | "bold" | "extrabold";

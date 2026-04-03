@@ -22,6 +22,7 @@ interface SectionHeaderProps {
   description: string;
   className?: string;
   children?: React.ReactNode;
+  subHeadingClassName?: string;
 }
 
 const SectionHeader = ({
@@ -29,6 +30,7 @@ const SectionHeader = ({
   description,
   className,
   children,
+  subHeadingClassName,
 }: SectionHeaderProps) => (
   <div
     className={cn(
@@ -38,9 +40,12 @@ const SectionHeader = ({
     <div className="flex flex-col gap-1">
       <Heading as="h3">{title}</Heading>
       {description && (
-        <SubHeading size="sm" className="text-muted-foreground ml-2" as="p">
-          {description}
-        </SubHeading>
+        <SubHeading
+          size="sm"
+          className={cn("text-muted-foreground ml-2", subHeadingClassName)}
+          as="p"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       )}
     </div>
     {children && <div>{children}</div>}

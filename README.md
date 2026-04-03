@@ -34,3 +34,31 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Portfolio Overview
+
+Welcome to my personal portfolio! This site showcases my projects, skills, and experience as a developer.
+
+### About Me
+
+I'm Shivam, a passionate software engineer with expertise in web development, particularly with Next.js, React, and modern JavaScript frameworks. I love building user-friendly applications and exploring new technologies.
+
+### Featured Projects
+
+- **Project 1**: A brief description of your first project, including technologies used and a link to the live demo or repository.
+- **Project 2**: Another project highlight with details.
+- **Project 3**: More projects as needed.
+
+### Skills
+
+- **Frontend**: React, Next.js, TypeScript, Tailwind CSS
+- **Backend**: Node.js, Express, MongoDB
+- **Tools**: Git, Docker, Vercel
+
+### Contact
+
+Feel free to reach out via [email](mailto:your.email@example.com) or connect on [LinkedIn](https://linkedin.com/in/yourprofile).
+
+---
+
+_This portfolio is built with Next.js and deployed on Vercel._
