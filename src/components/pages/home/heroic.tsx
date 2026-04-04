@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { File, Send } from "lucide-react";
 import { SocialIconStack } from "@/components/common/social-icon-stack";
+import { resumeUrl } from "@/config/constants";
 
 const Heroic = () => {
   return (
@@ -45,7 +46,7 @@ const Heroic = () => {
           </Link>
         </Button>
         <Button asChild variant={"outline"} className="group relative">
-          <Link href={"#"} target="_blank">
+          <Link href={resumeUrl} target="_blank">
             <File className="absolute left-2 transition-all group-hover:left-18" />
             <p className="ml-4 transition-all group-hover:mr-4 group-hover:ml-0">
               My Resume
