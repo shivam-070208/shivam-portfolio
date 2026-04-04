@@ -35,10 +35,10 @@ const Heroic = () => {
           className={cn(
             "bg-linear-to-br from-blue-400 to-blue-800",
             "group relative text-white",
-            "shadow-md shadow-neutral-600 dark:shadow-neutral-700"
+            "shadow-xl"
           )}>
           <Link href={"#contact"}>
-            <Send className="absolute left-2 transition-all group-hover:left-22" />
+            <Send className="absolute left-2 transition-all group-hover:left-18" />
             <p className="ml-4 transition-all group-hover:mr-4 group-hover:ml-0">
               Contact Me
             </p>
@@ -46,7 +46,7 @@ const Heroic = () => {
         </Button>
         <Button asChild variant={"outline"} className="group relative">
           <Link href={"#"} target="_blank">
-            <File className="absolute left-2 transition-all group-hover:left-22" />
+            <File className="absolute left-2 transition-all group-hover:left-18" />
             <p className="ml-4 transition-all group-hover:mr-4 group-hover:ml-0">
               My Resume
             </p>

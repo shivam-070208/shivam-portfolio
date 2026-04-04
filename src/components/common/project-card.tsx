@@ -13,11 +13,7 @@ import {
   FaReact,
   FaNodeJs,
   FaGithub,
-  FaCss3Alt,
-  FaJsSquare,
   FaSass,
-  FaAngular,
-  FaVuejs,
   FaJava,
   FaDocker,
   FaExternalLinkAlt,
@@ -88,10 +84,10 @@ const GradientClassesMap: string[] = [
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <Card className="pt-0!">
+    <Card className="wobbly-md overflow-hidden pt-0!">
       <div
         className={cn(
-          "group rounded-t-xl p-2",
+          "group rounded-t-xl p-4",
           GradientClassesMap[project.id % GradientClassesMap.length]
         )}>
         <Image
@@ -99,7 +95,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           alt={project.title}
           width={500}
           height={400}
-          className="object-cover transition-all group-hover:scale-110"
+          className="wobbly object-cover transition-all group-hover:scale-110"
         />
       </div>
       <CardHeader>
@@ -114,8 +110,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
             const Icon = TechNologyIconMap[tech]?.icon;
             return (
               <Avatar
-                className="group flex items-center overflow-hidden outline transition-all duration-300 dark:backdrop-contrast-60"
+                className="group outline-foreground flex items-center overflow-hidden outline transition-all duration-300 outline-dashed dark:backdrop-contrast-60"
                 tooltip={false}
+                isWobbled={false}
                 key={idx}>
                 {Icon && (
                   <Icon

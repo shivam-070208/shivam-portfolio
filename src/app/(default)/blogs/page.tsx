@@ -177,8 +177,8 @@ async function BlogsBody({ pageNum }: { pageNum: number }) {
                     }>
                     <Link
                       href={`/blogs/${blog._id}`}
-                      className="flex items-center gap-5 px-4 py-5 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900">
-                      <div className="relative h-24 w-36 shrink-0 overflow-hidden rounded-md border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900">
+                      className="flex flex-wrap items-center justify-center gap-5 px-4 py-5 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900">
+                      <div className="relative h-60 w-full shrink-0 overflow-hidden rounded-md border border-neutral-200 bg-neutral-100 sm:h-24 md:w-36 dark:border-neutral-800 dark:bg-neutral-900">
                         {blog.coverimage ? (
                           <Image
                             src={linktoWixImageLink(blog.coverimage)}
@@ -193,7 +193,7 @@ async function BlogsBody({ pageNum }: { pageNum: number }) {
                           </div>
                         )}
                       </div>
-                      <div className="min-w-0 flex-1">
+                      <div className="min-w-40 flex-1">
                         <h2 className="text-lg font-semibold text-neutral-900 group-hover:underline dark:text-neutral-50">
                           {blog.title}
                         </h2>

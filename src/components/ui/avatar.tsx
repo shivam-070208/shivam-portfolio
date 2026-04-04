@@ -14,6 +14,7 @@ type TooltipProps =
 type AvatarProps = TooltipProps & {
   className?: string;
   children: React.ReactNode;
+  isWobbled?: boolean;
 };
 
 const Avatar = ({
@@ -21,9 +22,15 @@ const Avatar = ({
   className,
   children,
   tooltipTitle,
+  isWobbled = true,
 }: Readonly<AvatarProps>) => {
   const avatarContent = (
-    <div className={cn("rounded-full w-fit h-fit overflow-hidden", className)}>
+    <div
+      className={cn(
+        "h-fit w-fit overflow-hidden rounded-full",
+        isWobbled && "wobbly",
+        className
+      )}>
       {children}
     </div>
   );
@@ -31,12 +38,8 @@ const Avatar = ({
   if (tooltip === true && tooltipTitle) {
     return (
       <Tooltip>
-        <TooltipTrigger asChild>
-          {avatarContent}
-        </TooltipTrigger>
-        <TooltipContent>
-          {tooltipTitle}
-        </TooltipContent>
+        <TooltipTrigger asChild>{avatarContent}</TooltipTrigger>
+        <TooltipContent>{tooltipTitle}</TooltipContent>
       </Tooltip>
     );
   }

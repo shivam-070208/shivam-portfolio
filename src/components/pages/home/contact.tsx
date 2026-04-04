@@ -39,7 +39,7 @@ const Contact = () => {
   return (
     <SectionContainer
       id="contact"
-      className="rounded-2 justify-center gap-2 border border-dashed py-4!">
+      className="rounded-2 wobbly justify-center gap-2 border border-dashed py-4">
       <Heading align="center">Contact</Heading>
       <SubHeading align="center" className="max-w-full!" size="sm">
         Reach out to me , whether any inquiry , collaboration and work.
