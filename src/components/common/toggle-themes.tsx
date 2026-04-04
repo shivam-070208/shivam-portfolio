@@ -18,7 +18,7 @@ const ThemeToggle = () => {
       className={cn(
         "border-foreground/20 flex h-7 w-12 cursor-pointer items-center rounded-full border p-1 transition-all duration-300",
         "bg-foreground/10 backdrop-blur-lg",
-        theme === "light" ? "justify-start" : "justify-end"
+        theme === "dark" ? "justify-start" : "justify-end"
       )}
       onClick={handleToggle}>
       <motion.div
